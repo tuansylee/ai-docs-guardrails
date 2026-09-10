@@ -22,7 +22,7 @@ Before committing any Markdown file. Cheap to run, so run it often.
 If the guards never fire for a month, the rules are either perfect or unused.
 Check which, then tighten them or remove them.
 
-## Lesson (2026-03)
+## Lesson
 Checking the whole file, including frontmatter, produced false alarms on a
 description that used a hyphenated term on purpose. Scope the check to the parts
 that matter.

@@ -20,7 +20,7 @@ subjects. Do not use this for marketing copy.
 If the team stops reading the draft and writes raw notes by hand for two releases
 in a row, delete this skill. It is not paying for itself.
 
-## Lesson (2026-02)
+## Lesson
 An early version invented a "Security" section when there were no security
 changes, because the template carried that heading. A template should carry
 structure, not empty headings that invite made-up content.

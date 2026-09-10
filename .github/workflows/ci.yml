@@ -1,0 +1,34 @@
+name: guards
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  guards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Guard self-tests
+        run: |
+          for g in guards/*.py; do
+            python "$g" --selftest
+          done
+
+      - name: Run guards on the corpus
+        run: python run_guards.py corpus
+
+      - name: Style rule on authored docs
+        run: |
+          python guards/style_lint.py skills
+          python guards/style_lint.py prompts
+
+      - name: Index is current, no dead links
+        run: python build_index.py corpus --check
+
+      - name: Index self-test (idempotent + dead-link catch)
+        run: python build_index.py --selftest
